@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="todosolo.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList</title>
+</head>
+<body>
+    <main id="main">
+
+<!-- title and task input field with an add button-->        
+        <h1 class="title">Add Todo!</h1>
+        <div class="addtodo">       
+            <input type="text" placeholder="add a title" name="addtitle"  id="add-header">
+            <input type="text" placeholder="add a task" name="addtodo" id="add-input">
+            <button id="add-btn">Add</button>
+        </div>
+
+<!--list of todos with a finished and delete button-->
+
+        <div class="list-todos">
+            <ul class="list-todos-ul">
+               <li class="todo-li" id="1">
+                  <p class="header">grocery</p>
+                  <p class="content">go buy grocery for the entire week</p>
+                  <div class="buttons">
+                    <p class="createdDate">25/05/2023, 18:40:48</p>
+                    <button  onclick = 'finishedEvent()' class="finished">Finished</button>
+                    <button onclick="deleteTodos()" class="delete">Delete</button>
+                  </div>
+                </li>  
+            </ul>
+    </main>
+    <script src="todosolo.js"></script>
+</body>
+</html>
