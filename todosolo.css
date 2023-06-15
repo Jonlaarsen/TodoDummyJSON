@@ -191,7 +191,7 @@
 .delete:hover, .edit:hover{
     transform: scale(1,1.5);
 }
-.createdDate{
+.createdDate, .finishedDate{
     font-size: 0.7rem;
     color: #eeeeee80;
 }

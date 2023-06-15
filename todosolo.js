@@ -2,12 +2,12 @@ let list = document.querySelector(".list-todos-ul");
 let addBtn = document.querySelector("#add-btn");
 let addInput = document.querySelector("#add-input");
 let addHeader = document.querySelector("#add-header");
-let finishedDate = document.querySelector("createdDate");
 
- //function date(){
-        let date = new Date();   
-        newDate = date.toLocaleString();      
- //};
+
+
+  let date = new Date();   
+  newDate = date.toLocaleString();      
+
  
 //a warning sign to put in  both a task and title.
 
@@ -44,6 +44,7 @@ function addTodo() {
                     <p class="createdDate">${newDate}</p>
                     <button class="finished">Finished</button>
                     <button class="delete">Delete</button>
+                    <p class="finishedDate">null</p>
                   </div>
                 </li> 
                 `;
@@ -65,6 +66,7 @@ function addTodo() {
 
 function finishedEvent() {
   let finishedplural = document.querySelectorAll(".finished");
+  let finishedDate = document.querySelectorAll(".finishedDate")
 
   finishedplural.forEach((finished) => {
     finished.addEventListener("click", () => {
@@ -85,15 +87,17 @@ function finishedEvent() {
       } else if (finished.classList[0] === "finished") {
         finished.classList.add("finishedPressed");
         finished.classList.remove("finished");
-        
+       
+       /*
         let finishedDate = document.querySelectorAll(".createdDate");
         finishedDate.forEach((finishedD) => {
         let date = new Date();
         newDate = date.toLocaleString();
-        finishedD.innerHTML = newDate;
-        }) 
+        finishedD.innerHTML = newDate; 
+        });*/
 
         console.log(newDate)
+
         fetch(`https://dummyjson.com/todos/${finished.parentElement.parentElement.id}`, {
           method: "PUT" /* or PATCH */,
           headers: { "Content-Type": "application/json" },
@@ -103,11 +107,9 @@ function finishedEvent() {
             userId: 5
           }),
           
-        })
-        
+        })       
           .then((res) => res.json())
           .then(console.log);
-          
           
       }
       
@@ -119,8 +121,6 @@ function finishedEvent() {
           
   function deleteTodos() {
     let dels = document.querySelectorAll(".delete");
-    setInterval = 100;
-  
     dels.forEach((del) => {
       let delNum;
       del.addEventListener("click", () => {
