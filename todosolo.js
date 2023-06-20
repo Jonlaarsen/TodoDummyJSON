@@ -2,6 +2,7 @@ let list = document.querySelector(".list-todos-ul");
 let addBtn = document.querySelector("#add-btn");
 let addInput = document.querySelector("#add-input");
 let addHeader = document.querySelector("#add-header");
+let todoContent = document.querySelector(".content");
 
 
 // show all todos
@@ -76,7 +77,7 @@ function addTodo() {
         
         let item = "";
         item += `
-        <li class="todo-li" ${data.completed = false} id="${data.id=31}">
+        <li class="todo-li" ${data.completed = false} id="${data.id=1}">
                   <p class="header">${addHeader.value}</p>
                   <p class="content">${data.todo}</p>
                   <div class="buttons">
@@ -118,7 +119,7 @@ function finishedEvent() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             completed: false,
-            todo: addInput.value,
+            todo: todoContent.value,
             userId: 5
           }),
         })
@@ -136,7 +137,7 @@ function finishedEvent() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             completed: true,
-            todo: addInput.value,
+            todo: todoContent.value,
             userId: 5
           }),
           
