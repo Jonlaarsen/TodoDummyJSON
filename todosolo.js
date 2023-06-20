@@ -71,8 +71,8 @@ function addTodo() {
       .then((res) => res.json())
       .then((data) => {
 
-        let date = new Date();   
-        newDate = date.toLocaleString();   
+        let addDate = new Date();   
+        newAddDate = addDate.toLocaleString();   
         
         let item = "";
         item += `
@@ -80,7 +80,7 @@ function addTodo() {
                   <p class="header">${addHeader.value}</p>
                   <p class="content">${data.todo}</p>
                   <div class="buttons">
-                    <p class="createdDate">${newDate}</p>
+                    <p class="createdDate">${newAddDate}</p>
                     <button class="finished">Finished</button>
                     <button class="delete">Delete</button>
                     
