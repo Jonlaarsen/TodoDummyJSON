@@ -66,7 +66,7 @@ function addTodo() {
       body: JSON.stringify({
         todo: addInput.value,
         completed: false,
-        userId: 5,
+        userId: 1,
       }),
     })
       .then((res) => res.json())
