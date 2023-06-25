@@ -102,7 +102,7 @@ function addTodo() {
               
           };
 
- // function that changes tasks class, completed status to current time.         
+ // function that changes tasks class, completed status and completed to current time.         
 
 function finishedEvent() {
   let finishedplural = document.querySelectorAll(".finished");
